@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <style>
+        * {
+            margin: 0rem;
+            padding: 0rem;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            background-color: rgb(58, 57, 57);
+        }
+
+        .logo img {
+            border: 2px solid white;
+            border-radius: 3rem;
+            width: 4rem;
+            height: 4rem;
+            margin: 0.35rem 2rem;
+        }
+
+        .ul-list {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .list-item {
+            display: block;
+            margin: auto;
+        }
+
+        .list-item a {
+            margin: 1rem 1rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hum-burger {
+            display: none;
+            transition: 1s;
+        }
+        
+
+
+
+
+        @media only screen and (max-width: 600px) {
+            .ul-list {
+                display: flex;
+                flex-direction: column;
+                margin: 0rem;
+                padding: 0rem;
+                width: 100%;
+               
+            }
+            
+
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-bar {
+                justify-content: unset;
+                padding: 0rem;
+                margin: 0rem;
+                width: 100%;
+               height: 0%;
+            }
+            .nav-bar-trans{
+          height: 100%;
+          transition: all 100s;
+            }
+
+            .list-item {
+                padding: 0.3rem 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+            .list-item:hover {
+                background-color: black;
+               
+            }
+            .hum-burger {
+                position: absolute;
+                display: block;
+                margin: auto;
+                border: 1px solid white;
+                border-radius: 0.3rem;
+                top: 3.4%;
+                right: 5%;
+                cursor: pointer;
+
+            }
+
+            .hum-item {
+                width: 36px;
+                margin: 8px;
+                background-color: white;
+            }
+            .hide{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.PNG" alt="logo">
+        </div>
+        <div class="nav-bar hide nav-bar-trans" id="nav-bar">
+            <ul class="ul-list">
+                <li class="list-item"><a>Home</a></li>
+                <li class="list-item"><a>About</a></li>
+                <li class="list-item"><a>Contact Us</a></li>
+                <li class="list-item"><a>About Us</a></li>
+            </ul>
+        </div>
+        <div class="hum-burger" id="hum-burger">
+            <hr class="hum-item">
+            <hr class="hum-item">
+            <hr class="hum-item">
+        </div>
+
+    </nav>
+    <script >
+        console.log("jS Script");
+let humBurger=document.getElementById('hum-burger');
+let nav_bar=document.getElementById('nav-bar');
+let flag=false;
+humBurger.addEventListener('click',()=>{
+    console.log("hum-burger clicked");
+    let nav_bar=document.getElementById('nav-bar');
+    nav_bar.classList.toggle("hide"); 
+    //nav_bar.classList.toggle("nav-bar-trans"); 
+})
+
+    </script>
+</body>
+
+</html>
